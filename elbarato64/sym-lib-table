@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name elbarato64)(type Legacy)(uri ${KIPRJMOD}/elbarato64.lib)(options "")(descr ""))
+)
