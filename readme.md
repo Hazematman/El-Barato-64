@@ -1,6 +1,6 @@
 # El Barato 64
 Open source N64 development cartridge. Currently a WIP
-- Hardware is current untested
+- Hardware is currently untested
 - firmware still needs to be written for board
 
 Uses Altera MAX II EPM570 to emulate N64 cartridge bus. N64 ROM is stored in SDRAM controlled by this FPGA. Uses an STM32 for USB communication and general board control.
