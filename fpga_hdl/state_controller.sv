@@ -64,7 +64,7 @@ assign rd_addr = ram_rd_addr;
 assign rd_enable = ram_rd_enable;
 
 logic ram_rst;
-assing rst_n = ram_rst;
+assign rst_n = ram_rst;
 
 spi slave_spi(
     .clk(clk),
@@ -78,7 +78,7 @@ spi slave_spi(
     .bit_count_out(spi_bit_count));
 
 initial begin
-    state <= state_begin_1;
+    state = state_begin_1;
 end
 
 
@@ -127,7 +127,7 @@ always @(posedge clk) begin
             state <= state_data_write_data_2;
         end
     end
-    state_data_write_data_1: begin
+    state_data_write_data_2: begin
         if(spi_data_ready) begin
             data[7:0] <= spi_data_recv;
             state <= state_data_write_commit;

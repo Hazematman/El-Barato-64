@@ -31,6 +31,7 @@ assign bit_count_out = bit_count;
 
 logic byte_recv;
 logic [7:0] byte_data_recv;
+assign data_recv = byte_data_recv;
 
 logic [7:0] byte_data_sent;
 assign MISO = byte_data_sent[7];
@@ -44,7 +45,6 @@ always @(posedge clk) begin
         bit_count <= 3'b000;
     end else if(SCK_risingedge) begin
         bit_count <= bit_count + 3'b001;
-
         byte_data_recv <= {byte_data_recv[6:0], MOSI_data};
     end
 end
@@ -52,7 +52,10 @@ end
 always @(posedge clk) byte_recv <= SSEL_active && SCK_risingedge && (bit_count == 3'b111);
 
 /* Latch byte we just read here */
-always @(posedge clk) if(byte_recv) data_ready_out <= byte_data_recv[7];
+always @(posedge clk) begin
+    if(byte_recv) data_ready_out <= 1;
+    else data_ready_out <= 0;
+end
 
 /* Control sending data */
 always @(posedge clk) begin
