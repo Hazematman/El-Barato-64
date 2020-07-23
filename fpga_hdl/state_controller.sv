@@ -24,6 +24,8 @@ module state_controller(
 );
 
 enum {
+    state_begin_1,
+    state_begin_2,
     state_wait,
     state_data_write_addr_1,
     state_data_write_addr_2,
@@ -61,6 +63,9 @@ logic ram_rd_enable;
 assign rd_addr = ram_rd_addr;
 assign rd_enable = ram_rd_enable;
 
+logic ram_rst;
+assing rst_n = ram_rst;
+
 spi slave_spi(
     .clk(clk),
     .SCK(SCK),
@@ -72,9 +77,21 @@ spi slave_spi(
     .data_send(spi_data_send),
     .bit_count_out(spi_bit_count));
 
+initial begin
+    state <= state_begin_1;
+end
+
 
 always @(posedge clk) begin
     case(state)
+    state_begin_1: begin
+        ram_rst <= 0;
+        state <= state_begin_2;
+    end
+    state_begin_2: begin
+        ram_rst <= 1;
+        state <= state_wait;
+    end
     state_wait: begin
         if(spi_data_ready) begin
             if(spi_data_recv == `SPI_CMD_WRITE) begin
