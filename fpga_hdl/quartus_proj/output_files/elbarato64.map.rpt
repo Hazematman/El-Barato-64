@@ -1,0 +1,316 @@
+Analysis & Synthesis report for elbarato64
+Thu Jul 23 20:05:23 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: sdram_controller:inst
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Jul 23 20:05:23 2020       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; elbarato64                                  ;
+; Top-level Entity Name       ; elbarato64                                  ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 376                                         ;
+; Total pins                  ; 44                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM570T144C5       ;                    ;
+; Top-level entity name                                            ; elbarato64         ; elbarato64         ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; ../state_controller.sv           ; yes             ; User SystemVerilog HDL File        ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv         ;         ;
+; ../spi.sv                        ; yes             ; User SystemVerilog HDL File        ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv                      ;         ;
+; ../sdram_controller.v            ; yes             ; User Verilog HDL File              ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/sdram_controller.v          ;         ;
+; elbarato64.bdf                   ; yes             ; User Block Diagram/Schematic File  ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/quartus_proj/elbarato64.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Total logic elements                        ; 376     ;
+;     -- Combinational with no register       ; 147     ;
+;     -- Register only                        ; 104     ;
+;     -- Combinational with a register        ; 125     ;
+;                                             ;         ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 113     ;
+;     -- 3 input functions                    ; 81      ;
+;     -- 2 input functions                    ; 76      ;
+;     -- 1 input functions                    ; 2       ;
+;     -- 0 input functions                    ; 0       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 367     ;
+;     -- arithmetic mode                      ; 9       ;
+;     -- qfbk mode                            ; 0       ;
+;     -- register cascade mode                ; 0       ;
+;     -- synchronous clear/load mode          ; 41      ;
+;     -- asynchronous clear/load mode         ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 229     ;
+; Total logic cells in carry chains           ; 10      ;
+; I/O pins                                    ; 44      ;
+; Maximum fan-out node                        ; MCO_clk ;
+; Maximum fan-out                             ; 230     ;
+; Total fan-out                               ; 1468    ;
+; Average fan-out                             ; 3.50    ;
++---------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                              ; Entity Name      ; Library Name ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
+; |elbarato64                 ; 376 (0)     ; 229          ; 0          ; 44   ; 0            ; 147 (0)      ; 104 (0)           ; 125 (0)          ; 10 (0)          ; 0 (0)      ; |elbarato64                                      ; elbarato64       ; work         ;
+;    |sdram_controller:inst|  ; 164 (164)   ; 81           ; 0          ; 0    ; 0            ; 83 (83)      ; 0 (0)             ; 81 (81)          ; 10 (10)         ; 0 (0)      ; |elbarato64|sdram_controller:inst                ; sdram_controller ; work         ;
+;    |state_controller:inst1| ; 212 (180)   ; 148          ; 0          ; 0    ; 0            ; 64 (60)      ; 104 (88)          ; 44 (32)          ; 0 (0)           ; 0 (0)      ; |elbarato64|state_controller:inst1               ; state_controller ; work         ;
+;       |spi:slave_spi|       ; 32 (32)     ; 28           ; 0          ; 0    ; 0            ; 4 (4)        ; 16 (16)           ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |elbarato64|state_controller:inst1|spi:slave_spi ; spi              ; work         ;
++-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++-------------------------------------------+----------------------------------------------+
+; Register name                             ; Reason for Removal                           ;
++-------------------------------------------+----------------------------------------------+
+; sdram_controller:inst|command[2,6]        ; Merged with sdram_controller:inst|command[1] ;
+; state_controller:inst1|state[5..9,11..31] ; Merged with state_controller:inst1|state[10] ;
+; sdram_controller:inst|command[1]          ; Stuck at GND due to stuck port data_in       ;
+; sdram_controller:inst|command[7]          ; Stuck at VCC due to stuck port data_in       ;
+; state_controller:inst1|state[10]          ; Stuck at GND due to stuck port data_in       ;
+; Total Number of Removed Registers = 31    ;                                              ;
++-------------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 229   ;
+; Number of registers using Synchronous Clear  ; 35    ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 191   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state_cnt[1]                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|spi:slave_spi|bit_count[0] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|refresh_cnt[1]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[17]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[14]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[6]               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|rd_data_r[8]                ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|haddr_r[5]                  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state[1]                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|command[3]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|spi_data_send[3]           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data[10]                   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data[4]                    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state[3]                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|wr_data_r[0]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |elbarato64|sdram_controller:inst|addr[11]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |elbarato64|sdram_controller:inst|bank_addr[0]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |elbarato64|sdram_controller:inst|addr[0]                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |elbarato64|sdram_controller:inst|addr[4]                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sdram_controller:inst ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; ROW_WIDTH      ; 13    ; Signed Integer                            ;
+; COL_WIDTH      ; 9     ; Signed Integer                            ;
+; BANK_WIDTH     ; 2     ; Signed Integer                            ;
+; SDRADDR_WIDTH  ; 13    ; Signed Integer                            ;
+; HADDR_WIDTH    ; 24    ; Signed Integer                            ;
+; CLK_FREQUENCY  ; 48    ; Signed Integer                            ;
+; REFRESH_TIME   ; 64    ; Signed Integer                            ;
+; REFRESH_COUNT  ; 8192  ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Jul 23 20:05:15 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elbarato64 -c elbarato64
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv
+    Info (12023): Found entity 1: state_controller File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv
+    Info (12023): Found entity 1: spi File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/sdram_controller.v
+    Info (12023): Found entity 1: sdram_controller File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/sdram_controller.v Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file elbarato64.bdf
+    Info (12023): Found entity 1: elbarato64
+Info (12127): Elaborating entity "elbarato64" for the top level hierarchy
+Info (12128): Elaborating entity "state_controller" for hierarchy "state_controller:inst1"
+Info (12128): Elaborating entity "spi" for hierarchy "state_controller:inst1|spi:slave_spi" File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 78
+Warning (10036): Verilog HDL or VHDL warning at spi.sv(22): object "SSEL_startmessage" assigned a value but never read File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv Line: 22
+Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:inst"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RAM_clk_enable" is stuck at VCC
+    Warning (13410): Pin "RAM_cs" is stuck at GND
+Info (21057): Implemented 420 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 376 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 551 megabytes
+    Info: Processing ended: Thu Jul 23 20:05:23 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
+
+

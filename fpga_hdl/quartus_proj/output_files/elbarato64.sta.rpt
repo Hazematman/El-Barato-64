@@ -1,0 +1,607 @@
+Timing Analyzer report for elbarato64
+Thu Jul 23 20:05:06 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'MCO_clk'
+ 12. Hold: 'MCO_clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; elbarato64                                          ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM570T144C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; MCO_clk    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { MCO_clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 113.17 MHz ; 113.17 MHz      ; MCO_clk    ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Setup Summary                    ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; MCO_clk ; -7.836 ; -1423.603     ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Hold Summary                    ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; MCO_clk ; 1.376 ; 0.000         ;
++---------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------+
+; Minimum Pulse Width Summary      ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; MCO_clk ; -2.289 ; -2.289        ;
++---------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'MCO_clk'                                                                                                                                                                ;
++--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                              ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.836 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.503      ;
+; -7.801 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.468      ;
+; -7.789 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.456      ;
+; -7.781 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.448      ;
+; -7.727 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.394      ;
+; -7.553 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.220      ;
+; -7.537 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.204      ;
+; -7.525 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.192      ;
+; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
+; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
+; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
+; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
+; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
+; -7.506 ; state_controller:inst1|state[1]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.173      ;
+; -7.496 ; state_controller:inst1|state[2]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.163      ;
+; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[17]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
+; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
+; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
+; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
+; -7.411 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.078      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
+; -7.393 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.060      ;
+; -7.352 ; state_controller:inst1|state[1]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.019      ;
+; -7.349 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.016      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
+; -7.305 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.972      ;
+; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
+; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
+; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
+; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
+; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
+; -7.263 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.930      ;
+; -7.259 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_rd_enable    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.926      ;
+; -7.236 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|state[4]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.903      ;
+; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[17]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
+; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
+; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
+; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
+; -7.220 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.887      ;
+; -7.220 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[4]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.887      ;
+; -7.211 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[2]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.878      ;
+; -7.205 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.872      ;
+; -7.198 ; state_controller:inst1|state[2]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.865      ;
+; -7.193 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.860      ;
+; -7.184 ; state_controller:inst1|state[1]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.851      ;
+; -7.178 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.845      ;
+; -7.140 ; sdram_controller:inst|state[1]                         ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.807      ;
+; -7.135 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.802      ;
+; -7.135 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[22]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.802      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[5]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[4]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[3]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[2]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[1]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[0]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; sdram_controller:inst|state[3]                         ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
+; -7.109 ; state_controller:inst1|spi:slave_spi|data_ready_out    ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.776      ;
+; -7.101 ; sdram_controller:inst|refresh_cnt[5]                   ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.768      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
+; -7.092 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.759      ;
+; -7.092 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[22]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.759      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[8]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[15]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[14]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[13]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[12]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[11]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[10]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[9]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
+; -7.078 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.745      ;
+; -7.066 ; state_controller:inst1|state[3]                        ; state_controller:inst1|spi_data_send[2] ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.733      ;
+; -7.066 ; state_controller:inst1|state[3]                        ; state_controller:inst1|spi_data_send[1] ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.733      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[12]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[2]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[1]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[10]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[23]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
+; -7.048 ; state_controller:inst1|state[4]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.715      ;
+; -7.044 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[18]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.711      ;
+; -7.044 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.711      ;
++--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'MCO_clk'                                                                                                                                                                               ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.376 ; state_controller:inst1|data_addr[5]                    ; state_controller:inst1|ram_wr_addr[5]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.597      ;
+; 1.391 ; state_controller:inst1|data_addr[2]                    ; state_controller:inst1|ram_wr_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.612      ;
+; 1.414 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|spi:slave_spi|byte_data_recv[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.635      ;
+; 1.419 ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; state_controller:inst1|spi:slave_spi|byte_data_recv[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.640      ;
+; 1.423 ; state_controller:inst1|spi:slave_spi|SSELr[0]          ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.644      ;
+; 1.425 ; state_controller:inst1|spi:slave_spi|SCKr[0]           ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.646      ;
+; 1.425 ; state_controller:inst1|spi:slave_spi|byte_data_recv[3] ; state_controller:inst1|spi:slave_spi|byte_data_recv[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.646      ;
+; 1.429 ; state_controller:inst1|spi:slave_spi|byte_data_recv[0] ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.650      ;
+; 1.465 ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; state_controller:inst1|spi:slave_spi|SCKr[2]           ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.686      ;
+; 1.640 ; state_controller:inst1|data_addr[3]                    ; state_controller:inst1|ram_wr_addr[3]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.861      ;
+; 1.642 ; state_controller:inst1|spi:slave_spi|MOSIr[0]          ; state_controller:inst1|spi:slave_spi|MOSIr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.863      ;
+; 1.645 ; state_controller:inst1|ram_wr_data[12]                 ; sdram_controller:inst|wr_data_r[12]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.866      ;
+; 1.650 ; state_controller:inst1|spi:slave_spi|byte_data_sent[0] ; state_controller:inst1|spi:slave_spi|byte_data_sent[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.871      ;
+; 1.651 ; state_controller:inst1|spi:slave_spi|byte_data_sent[6] ; state_controller:inst1|spi:slave_spi|byte_data_sent[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.872      ;
+; 1.651 ; state_controller:inst1|ram_wr_data[2]                  ; sdram_controller:inst|wr_data_r[2]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.872      ;
+; 1.652 ; state_controller:inst1|ram_rd_addr[0]                  ; sdram_controller:inst|haddr_r[0]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.873      ;
+; 1.656 ; state_controller:inst1|ram_wr_data[4]                  ; sdram_controller:inst|wr_data_r[4]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.877      ;
+; 1.657 ; state_controller:inst1|ram_wr_data[7]                  ; sdram_controller:inst|wr_data_r[7]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.878      ;
+; 1.659 ; sdram_controller:inst|refresh_cnt[9]                   ; sdram_controller:inst|refresh_cnt[9]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.880      ;
+; 1.659 ; state_controller:inst1|ram_wr_data[11]                 ; sdram_controller:inst|wr_data_r[11]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.880      ;
+; 1.662 ; state_controller:inst1|ram_wr_data[15]                 ; sdram_controller:inst|wr_data_r[15]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.883      ;
+; 1.669 ; state_controller:inst1|spi:slave_spi|byte_data_recv[4] ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.890      ;
+; 1.674 ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.895      ;
+; 1.725 ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.946      ;
+; 1.761 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.982      ;
+; 1.762 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.983      ;
+; 1.766 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.987      ;
+; 1.902 ; state_controller:inst1|ram_wr_addr[8]                  ; sdram_controller:inst|haddr_r[8]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.123      ;
+; 1.913 ; state_controller:inst1|ram_wr_addr[14]                 ; sdram_controller:inst|haddr_r[14]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.134      ;
+; 1.913 ; state_controller:inst1|ram_rd_addr[11]                 ; sdram_controller:inst|haddr_r[11]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.134      ;
+; 1.915 ; state_controller:inst1|spi:slave_spi|byte_data_sent[3] ; state_controller:inst1|spi:slave_spi|byte_data_sent[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.136      ;
+; 1.944 ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.165      ;
+; 1.984 ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.205      ;
+; 2.046 ; state_controller:inst1|ram_rd_addr[18]                 ; sdram_controller:inst|haddr_r[18]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.267      ;
+; 2.047 ; state_controller:inst1|ram_wr_addr[21]                 ; sdram_controller:inst|haddr_r[21]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.268      ;
+; 2.051 ; state_controller:inst1|ram_rd_addr[8]                  ; sdram_controller:inst|haddr_r[8]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.272      ;
+; 2.116 ; sdram_controller:inst|refresh_cnt[0]                   ; sdram_controller:inst|refresh_cnt[0]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; sdram_controller:inst|refresh_cnt[7]                   ; sdram_controller:inst|refresh_cnt[7]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118 ; sdram_controller:inst|command[4]                       ; sdram_controller:inst|command[4]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.339      ;
+; 2.118 ; state_controller:inst1|ram_rd_addr[9]                  ; sdram_controller:inst|haddr_r[9]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.339      ;
+; 2.119 ; state_controller:inst1|ram_rd_addr[22]                 ; sdram_controller:inst|haddr_r[22]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.340      ;
+; 2.119 ; state_controller:inst1|spi:slave_spi|byte_data_sent[5] ; state_controller:inst1|spi:slave_spi|byte_data_sent[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.340      ;
+; 2.120 ; state_controller:inst1|ram_rd_addr[5]                  ; sdram_controller:inst|haddr_r[5]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.341      ;
+; 2.126 ; sdram_controller:inst|refresh_cnt[1]                   ; sdram_controller:inst|refresh_cnt[1]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; sdram_controller:inst|refresh_cnt[2]                   ; sdram_controller:inst|refresh_cnt[2]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; state_controller:inst1|spi:slave_spi|byte_data_sent[1] ; state_controller:inst1|spi:slave_spi|byte_data_sent[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.348      ;
+; 2.128 ; state_controller:inst1|spi:slave_spi|byte_data_sent[4] ; state_controller:inst1|spi:slave_spi|byte_data_sent[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.349      ;
+; 2.128 ; state_controller:inst1|spi:slave_spi|byte_data_sent[2] ; state_controller:inst1|spi:slave_spi|byte_data_sent[3] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.349      ;
+; 2.133 ; state_controller:inst1|state[3]                        ; state_controller:inst1|state[3]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.354      ;
+; 2.150 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|data[14]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.371      ;
+; 2.152 ; state_controller:inst1|ram_wr_data[8]                  ; sdram_controller:inst|wr_data_r[8]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.373      ;
+; 2.153 ; state_controller:inst1|ram_wr_data[6]                  ; sdram_controller:inst|wr_data_r[6]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.374      ;
+; 2.164 ; state_controller:inst1|spi:slave_spi|SCKr[2]           ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.385      ;
+; 2.171 ; state_controller:inst1|ram_rd_addr[14]                 ; sdram_controller:inst|haddr_r[14]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.392      ;
+; 2.204 ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.425      ;
+; 2.216 ; state_controller:inst1|ram_wr_addr[18]                 ; sdram_controller:inst|haddr_r[18]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.437      ;
+; 2.217 ; sdram_controller:inst|rd_data_r[1]                     ; state_controller:inst1|data[1]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.438      ;
+; 2.219 ; state_controller:inst1|ram_wr_data[14]                 ; sdram_controller:inst|wr_data_r[14]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.440      ;
+; 2.221 ; sdram_controller:inst|refresh_cnt[3]                   ; sdram_controller:inst|refresh_cnt[3]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; sdram_controller:inst|refresh_cnt[8]                   ; sdram_controller:inst|refresh_cnt[8]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222 ; state_controller:inst1|ram_rd_enable                   ; state_controller:inst1|ram_rd_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.443      ;
+; 2.230 ; sdram_controller:inst|refresh_cnt[5]                   ; sdram_controller:inst|refresh_cnt[5]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; sdram_controller:inst|refresh_cnt[4]                   ; sdram_controller:inst|refresh_cnt[4]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; sdram_controller:inst|refresh_cnt[6]                   ; sdram_controller:inst|refresh_cnt[6]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.452      ;
+; 2.234 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.455      ;
+; 2.272 ; state_controller:inst1|ram_rst                         ; state_controller:inst1|ram_rst                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.493      ;
+; 2.273 ; state_controller:inst1|ram_wr_enable                   ; state_controller:inst1|ram_wr_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.494      ;
+; 2.276 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.497      ;
+; 2.277 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.498      ;
+; 2.283 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.504      ;
+; 2.306 ; state_controller:inst1|ram_rd_addr[21]                 ; sdram_controller:inst|haddr_r[21]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.527      ;
+; 2.308 ; state_controller:inst1|ram_wr_addr[20]                 ; sdram_controller:inst|haddr_r[20]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.529      ;
+; 2.312 ; state_controller:inst1|ram_wr_addr[9]                  ; sdram_controller:inst|haddr_r[9]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.533      ;
+; 2.348 ; state_controller:inst1|spi:slave_spi|byte_data_recv[2] ; state_controller:inst1|data[10]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.569      ;
+; 2.352 ; state_controller:inst1|data_addr[13]                   ; state_controller:inst1|ram_wr_addr[13]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.573      ;
+; 2.363 ; state_controller:inst1|data_addr[1]                    ; state_controller:inst1|ram_wr_addr[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.584      ;
+; 2.371 ; state_controller:inst1|data_addr[12]                   ; state_controller:inst1|ram_rd_addr[12]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.592      ;
+; 2.375 ; state_controller:inst1|data_addr[12]                   ; state_controller:inst1|ram_wr_addr[12]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.596      ;
+; 2.377 ; sdram_controller:inst|state_cnt[0]                     ; sdram_controller:inst|state_cnt[0]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.598      ;
+; 2.388 ; state_controller:inst1|data_addr[10]                   ; state_controller:inst1|ram_wr_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.609      ;
+; 2.395 ; state_controller:inst1|data_addr[10]                   ; state_controller:inst1|ram_rd_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.616      ;
+; 2.426 ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; state_controller:inst1|data_addr[5]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.647      ;
+; 2.432 ; state_controller:inst1|spi:slave_spi|byte_data_recv[0] ; state_controller:inst1|data_addr[0]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.653      ;
+; 2.458 ; state_controller:inst1|data_addr[15]                   ; state_controller:inst1|ram_rd_addr[15]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.679      ;
+; 2.465 ; state_controller:inst1|data_addr[15]                   ; state_controller:inst1|ram_wr_addr[15]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.686      ;
+; 2.482 ; state_controller:inst1|data_addr[11]                   ; state_controller:inst1|ram_wr_addr[11]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.703      ;
+; 2.515 ; state_controller:inst1|ram_rd_addr[20]                 ; sdram_controller:inst|haddr_r[20]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.736      ;
+; 2.521 ; state_controller:inst1|ram_wr_addr[11]                 ; sdram_controller:inst|haddr_r[11]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.742      ;
+; 2.524 ; state_controller:inst1|ram_wr_addr[13]                 ; sdram_controller:inst|haddr_r[13]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.745      ;
+; 2.530 ; state_controller:inst1|spi:slave_spi|byte_data_recv[3] ; state_controller:inst1|data_addr[11]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.751      ;
+; 2.531 ; state_controller:inst1|data[1]                         ; state_controller:inst1|ram_wr_data[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.752      ;
+; 2.571 ; state_controller:inst1|data_addr[2]                    ; state_controller:inst1|ram_rd_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.792      ;
+; 2.587 ; state_controller:inst1|ram_wr_data[13]                 ; sdram_controller:inst|wr_data_r[13]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.808      ;
+; 2.592 ; sdram_controller:inst|rd_data_r[3]                     ; state_controller:inst1|data[3]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.813      ;
+; 2.603 ; state_controller:inst1|ram_rd_addr[1]                  ; sdram_controller:inst|haddr_r[1]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.824      ;
+; 2.607 ; sdram_controller:inst|state_cnt[3]                     ; sdram_controller:inst|state_cnt[3]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.828      ;
+; 2.619 ; state_controller:inst1|ram_wr_addr[19]                 ; sdram_controller:inst|haddr_r[19]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.840      ;
+; 2.619 ; state_controller:inst1|data_addr[13]                   ; state_controller:inst1|ram_rd_addr[13]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.840      ;
+; 2.623 ; state_controller:inst1|data[14]                        ; state_controller:inst1|spi_data_send[6]                ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.844      ;
+; 2.624 ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; state_controller:inst1|data_addr[1]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.845      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; MCO_clk    ; MCO_clk  ; 2329     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; MCO_clk    ; MCO_clk  ; 2329     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 20    ; 20   ;
+; Unconstrained Input Port Paths  ; 20    ; 20   ;
+; Unconstrained Output Ports      ; 38    ; 38   ;
+; Unconstrained Output Port Paths ; 197   ; 197  ;
++---------------------------------+-------+------+
+
+
++----------------------------------------+
+; Clock Status Summary                   ;
++---------+---------+------+-------------+
+; Target  ; Clock   ; Type ; Status      ;
++---------+---------+------+-------------+
+; MCO_clk ; MCO_clk ; Base ; Constrained ;
++---------+---------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; MCO_clk      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; MOSI         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[15] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SCK          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSEL         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; MISO          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_bank[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_bank[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_cas       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_mask_high ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_mask_low  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_ras       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_we        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; MCO_clk      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; MOSI         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[15] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SCK          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSEL         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; MISO          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_addr[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_bank[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_bank[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_cas       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_data[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_mask_high ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_mask_low  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_ras       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM_we        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Jul 23 20:05:05 2020
+Info: Command: quartus_sta elbarato64 -c elbarato64
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'elbarato64.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name MCO_clk MCO_clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.836
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.836           -1423.603 MCO_clk 
+Info (332146): Worst-case hold slack is 1.376
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.376               0.000 MCO_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 MCO_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 566 megabytes
+    Info: Processing ended: Thu Jul 23 20:05:06 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
