@@ -122,6 +122,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "rst_n" (rect 174 123 195 135)(font "Arial" ))
 		(line (pt 216 128)(pt 200 128)(line_width 1))
 	)
+	(port
+		(pt 216 144)
+		(output)
+		(text "led" (rect 0 0 10 12)(font "Arial" ))
+		(text "led" (rect 185 139 195 151)(font "Arial" ))
+		(line (pt 216 144)(pt 200 144)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 200 160)(line_width 1))
 	)

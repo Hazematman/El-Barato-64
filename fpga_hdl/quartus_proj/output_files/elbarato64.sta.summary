@@ -3,8 +3,8 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'MCO_clk'
-Slack : -7.836
-TNS   : -1423.603
+Slack : -8.602
+TNS   : -1582.800
 
 Type  : Hold 'MCO_clk'
 Slack : 1.376

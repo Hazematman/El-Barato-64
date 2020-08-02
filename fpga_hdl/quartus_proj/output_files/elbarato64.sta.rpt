@@ -1,5 +1,5 @@
 Timing Analyzer report for elbarato64
-Thu Jul 23 20:05:06 2020
+Sun Aug  2 14:06:55 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -96,7 +96,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 113.17 MHz ; 113.17 MHz      ; MCO_clk    ;      ;
+; 104.14 MHz ; 104.14 MHz      ; MCO_clk    ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -106,7 +106,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+--------+---------------+
 ; Clock   ; Slack  ; End Point TNS ;
 +---------+--------+---------------+
-; MCO_clk ; -7.836 ; -1423.603     ;
+; MCO_clk ; -8.602 ; -1582.800     ;
 +---------+--------+---------------+
 
 
@@ -145,106 +145,106 @@ No paths to report.
 +--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                                              ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
-; -7.836 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.503      ;
-; -7.801 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.468      ;
-; -7.789 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.456      ;
-; -7.781 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.448      ;
-; -7.727 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.394      ;
-; -7.553 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.220      ;
-; -7.537 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.204      ;
-; -7.525 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.192      ;
-; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
-; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
-; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
-; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
-; -7.522 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.189      ;
-; -7.506 ; state_controller:inst1|state[1]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.173      ;
-; -7.496 ; state_controller:inst1|state[2]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.163      ;
-; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[17]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
-; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
-; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
-; -7.470 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_data[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.137      ;
-; -7.411 ; state_controller:inst1|state[4]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.078      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.398 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.065      ;
-; -7.393 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.060      ;
-; -7.352 ; state_controller:inst1|state[1]                        ; state_controller:inst1|state[3]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.019      ;
-; -7.349 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.016      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.343 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.010      ;
-; -7.305 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.972      ;
-; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
-; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
-; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
-; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
-; -7.274 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.941      ;
-; -7.263 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.930      ;
-; -7.259 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_rd_enable    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.926      ;
-; -7.236 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|state[4]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.903      ;
-; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[17]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
-; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
-; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
-; -7.222 ; state_controller:inst1|state[2]                        ; state_controller:inst1|ram_wr_data[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.889      ;
-; -7.220 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.887      ;
-; -7.220 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[4]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.887      ;
-; -7.211 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[2]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.878      ;
-; -7.205 ; state_controller:inst1|state[0]                        ; state_controller:inst1|state[1]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.872      ;
-; -7.198 ; state_controller:inst1|state[2]                        ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.865      ;
-; -7.193 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.860      ;
-; -7.184 ; state_controller:inst1|state[1]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.851      ;
-; -7.178 ; state_controller:inst1|state[4]                        ; state_controller:inst1|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.845      ;
-; -7.140 ; sdram_controller:inst|state[1]                         ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.807      ;
-; -7.135 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.802      ;
-; -7.135 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[22]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.802      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[5]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[4]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[3]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[2]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[1]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; state_controller:inst1|state[3]                        ; state_controller:inst1|data_addr[0]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.127 ; sdram_controller:inst|state[3]                         ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.794      ;
-; -7.109 ; state_controller:inst1|spi:slave_spi|data_ready_out    ; state_controller:inst1|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.776      ;
-; -7.101 ; sdram_controller:inst|refresh_cnt[5]                   ; sdram_controller:inst|state[0]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.768      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[12]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.099 ; state_controller:inst1|state[2]                        ; state_controller:inst1|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.766      ;
-; -7.092 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.759      ;
-; -7.092 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_rd_addr[22]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.759      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[8]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[15]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[14]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[13]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[12]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[11]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[10]    ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.088 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data_addr[9]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.755      ;
-; -7.078 ; state_controller:inst1|state[0]                        ; state_controller:inst1|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.745      ;
-; -7.066 ; state_controller:inst1|state[3]                        ; state_controller:inst1|spi_data_send[2] ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.733      ;
-; -7.066 ; state_controller:inst1|state[3]                        ; state_controller:inst1|spi_data_send[1] ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.733      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[12]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[2]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[1]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[10]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.059 ; state_controller:inst1|state[0]                        ; state_controller:inst1|ram_rd_addr[23]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.726      ;
-; -7.048 ; state_controller:inst1|state[4]                        ; state_controller:inst1|ram_rd_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.715      ;
-; -7.044 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[18]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.711      ;
-; -7.044 ; state_controller:inst1|state[3]                        ; state_controller:inst1|ram_wr_addr[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 7.711      ;
+; -8.602 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[7]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.269      ;
+; -8.602 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[6]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.269      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.470 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.137      ;
+; -8.450 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.117      ;
+; -8.450 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.117      ;
+; -8.450 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.117      ;
+; -8.360 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.027      ;
+; -8.360 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[12]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.027      ;
+; -8.360 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[10]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.027      ;
+; -8.334 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[19]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[6]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[13]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[7]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[16]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.334 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 9.001      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[18]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_addr[9]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.325 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_data[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.992      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.281 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.948      ;
+; -8.280 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.947      ;
+; -8.280 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_data[1]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.947      ;
+; -8.280 ; state_controller:inst2|state[1]                        ; state_controller:inst2|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.947      ;
+; -8.269 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[7]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.936      ;
+; -8.269 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data[6]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.936      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.255 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.922      ;
+; -8.248 ; state_controller:inst2|state[3]                        ; state_controller:inst2|state[10]        ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.915      ;
+; -8.244 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[3]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.911      ;
+; -8.244 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[12]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.911      ;
+; -8.244 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[10]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.911      ;
+; -8.218 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[19]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.885      ;
+; -8.218 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[6]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.885      ;
+; -8.218 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[5]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.885      ;
+; -8.218 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[13]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.885      ;
+; -8.216 ; state_controller:inst2|spi:slave_spi|byte_recv         ; state_controller:inst2|state[0]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.883      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[18]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[15]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_addr[9]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_data[11]  ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.209 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_data[8]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.876      ;
+; -8.171 ; state_controller:inst2|state[2]                        ; state_controller:inst2|data[7]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.838      ;
+; -8.171 ; state_controller:inst2|state[2]                        ; state_controller:inst2|data[6]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.838      ;
+; -8.164 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_data[4]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.831      ;
+; -8.164 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_data[1]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.831      ;
+; -8.164 ; state_controller:inst2|state[2]                        ; state_controller:inst2|ram_wr_data[0]   ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.831      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[7]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[5]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[4]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[2]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[1]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.163 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data_addr[0]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.830      ;
+; -8.146 ; state_controller:inst2|state[4]                        ; state_controller:inst2|state[10]        ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.813      ;
+; -8.135 ; state_controller:inst2|state[3]                        ; state_controller:inst2|spi_data_send[0] ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.802      ;
+; -8.120 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[5]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.787      ;
+; -8.120 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[3]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.787      ;
+; -8.120 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[1]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.787      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[7]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[5]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[4]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[2]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[1]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.117 ; state_controller:inst2|state[10]                       ; state_controller:inst2|data_addr[0]     ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.784      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.100 ; state_controller:inst2|state[4]                        ; state_controller:inst2|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.767      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[15]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[14]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[13]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[11]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[10]         ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[9]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
+; -8.084 ; state_controller:inst2|state[1]                        ; state_controller:inst2|data[8]          ; MCO_clk      ; MCO_clk     ; 1.000        ; 0.000      ; 8.751      ;
 +--------+--------------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -253,106 +253,106 @@ No paths to report.
 +-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.376 ; state_controller:inst1|data_addr[5]                    ; state_controller:inst1|ram_wr_addr[5]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.597      ;
-; 1.391 ; state_controller:inst1|data_addr[2]                    ; state_controller:inst1|ram_wr_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.612      ;
-; 1.414 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|spi:slave_spi|byte_data_recv[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.635      ;
-; 1.419 ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; state_controller:inst1|spi:slave_spi|byte_data_recv[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.640      ;
-; 1.423 ; state_controller:inst1|spi:slave_spi|SSELr[0]          ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.644      ;
-; 1.425 ; state_controller:inst1|spi:slave_spi|SCKr[0]           ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.646      ;
-; 1.425 ; state_controller:inst1|spi:slave_spi|byte_data_recv[3] ; state_controller:inst1|spi:slave_spi|byte_data_recv[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.646      ;
-; 1.429 ; state_controller:inst1|spi:slave_spi|byte_data_recv[0] ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.650      ;
-; 1.465 ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; state_controller:inst1|spi:slave_spi|SCKr[2]           ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.686      ;
-; 1.640 ; state_controller:inst1|data_addr[3]                    ; state_controller:inst1|ram_wr_addr[3]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.861      ;
-; 1.642 ; state_controller:inst1|spi:slave_spi|MOSIr[0]          ; state_controller:inst1|spi:slave_spi|MOSIr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.863      ;
-; 1.645 ; state_controller:inst1|ram_wr_data[12]                 ; sdram_controller:inst|wr_data_r[12]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.866      ;
-; 1.650 ; state_controller:inst1|spi:slave_spi|byte_data_sent[0] ; state_controller:inst1|spi:slave_spi|byte_data_sent[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.871      ;
-; 1.651 ; state_controller:inst1|spi:slave_spi|byte_data_sent[6] ; state_controller:inst1|spi:slave_spi|byte_data_sent[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.872      ;
-; 1.651 ; state_controller:inst1|ram_wr_data[2]                  ; sdram_controller:inst|wr_data_r[2]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.872      ;
-; 1.652 ; state_controller:inst1|ram_rd_addr[0]                  ; sdram_controller:inst|haddr_r[0]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.873      ;
-; 1.656 ; state_controller:inst1|ram_wr_data[4]                  ; sdram_controller:inst|wr_data_r[4]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.877      ;
-; 1.657 ; state_controller:inst1|ram_wr_data[7]                  ; sdram_controller:inst|wr_data_r[7]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.878      ;
+; 1.376 ; state_controller:inst2|spi:slave_spi|SSELr[0]          ; state_controller:inst2|spi:slave_spi|SSELr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.597      ;
+; 1.376 ; state_controller:inst2|spi:slave_spi|MOSIr[0]          ; state_controller:inst2|spi:slave_spi|MOSIr[1]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.597      ;
+; 1.454 ; state_controller:inst2|spi:slave_spi|SCKr[1]           ; state_controller:inst2|spi:slave_spi|SCKr[2]           ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.675      ;
+; 1.454 ; state_controller:inst2|spi:slave_spi|byte_data_recv[0] ; state_controller:inst2|spi:slave_spi|byte_data_recv[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.675      ;
+; 1.467 ; state_controller:inst2|spi:slave_spi|byte_data_recv[1] ; state_controller:inst2|spi:slave_spi|byte_data_recv[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.688      ;
+; 1.468 ; state_controller:inst2|spi:slave_spi|byte_data_recv[2] ; state_controller:inst2|spi:slave_spi|byte_data_recv[3] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.689      ;
+; 1.641 ; state_controller:inst2|ram_wr_data[1]                  ; sdram_controller:inst|wr_data_r[1]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.862      ;
+; 1.643 ; state_controller:inst2|ram_wr_data[4]                  ; sdram_controller:inst|wr_data_r[4]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.864      ;
 ; 1.659 ; sdram_controller:inst|refresh_cnt[9]                   ; sdram_controller:inst|refresh_cnt[9]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.880      ;
-; 1.659 ; state_controller:inst1|ram_wr_data[11]                 ; sdram_controller:inst|wr_data_r[11]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.880      ;
-; 1.662 ; state_controller:inst1|ram_wr_data[15]                 ; sdram_controller:inst|wr_data_r[15]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.883      ;
-; 1.669 ; state_controller:inst1|spi:slave_spi|byte_data_recv[4] ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.890      ;
-; 1.674 ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.895      ;
-; 1.725 ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.946      ;
-; 1.761 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.982      ;
-; 1.762 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.983      ;
-; 1.766 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.987      ;
-; 1.902 ; state_controller:inst1|ram_wr_addr[8]                  ; sdram_controller:inst|haddr_r[8]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.123      ;
-; 1.913 ; state_controller:inst1|ram_wr_addr[14]                 ; sdram_controller:inst|haddr_r[14]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.134      ;
-; 1.913 ; state_controller:inst1|ram_rd_addr[11]                 ; sdram_controller:inst|haddr_r[11]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.134      ;
-; 1.915 ; state_controller:inst1|spi:slave_spi|byte_data_sent[3] ; state_controller:inst1|spi:slave_spi|byte_data_sent[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.136      ;
-; 1.944 ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.165      ;
-; 1.984 ; state_controller:inst1|spi:slave_spi|SCKr[1]           ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.205      ;
-; 2.046 ; state_controller:inst1|ram_rd_addr[18]                 ; sdram_controller:inst|haddr_r[18]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.267      ;
-; 2.047 ; state_controller:inst1|ram_wr_addr[21]                 ; sdram_controller:inst|haddr_r[21]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.268      ;
-; 2.051 ; state_controller:inst1|ram_rd_addr[8]                  ; sdram_controller:inst|haddr_r[8]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.272      ;
+; 1.659 ; state_controller:inst2|spi_do_send                     ; state_controller:inst2|spi_do_send                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.880      ;
+; 1.668 ; state_controller:inst2|spi:slave_spi|byte_data_recv[3] ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.889      ;
+; 1.675 ; state_controller:inst2|spi:slave_spi|byte_data_sent[0] ; state_controller:inst2|spi:slave_spi|byte_data_sent[1] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.896      ;
+; 1.685 ; state_controller:inst2|spi:slave_spi|byte_data_recv[4] ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.906      ;
+; 1.695 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 1.916      ;
+; 1.900 ; state_controller:inst2|data_addr[12]                   ; state_controller:inst2|ram_rd_addr[12]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.121      ;
+; 1.903 ; state_controller:inst2|data_addr[18]                   ; state_controller:inst2|ram_wr_addr[18]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.124      ;
+; 1.906 ; state_controller:inst2|data_addr[0]                    ; state_controller:inst2|ram_wr_addr[0]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.127      ;
+; 1.911 ; state_controller:inst2|ram_wr_data[14]                 ; sdram_controller:inst|wr_data_r[14]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.132      ;
+; 1.911 ; state_controller:inst2|ram_wr_data[2]                  ; sdram_controller:inst|wr_data_r[2]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.132      ;
+; 1.919 ; state_controller:inst2|ram_wr_data[15]                 ; sdram_controller:inst|wr_data_r[15]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.140      ;
+; 1.919 ; state_controller:inst2|ram_wr_data[13]                 ; sdram_controller:inst|wr_data_r[13]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.140      ;
+; 1.925 ; sdram_controller:inst|rd_data_r[6]                     ; state_controller:inst2|data[6]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.146      ;
+; 1.926 ; state_controller:inst2|ram_wr_data[3]                  ; sdram_controller:inst|wr_data_r[3]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.147      ;
+; 1.929 ; state_controller:inst2|spi:slave_spi|bit_count[1]      ; state_controller:inst2|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.150      ;
+; 1.931 ; state_controller:inst2|spi:slave_spi|busy_out          ; state_controller:inst2|spi:slave_spi|data_change       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.152      ;
+; 1.977 ; state_controller:inst2|spi:slave_spi|SCKr[1]           ; state_controller:inst2|spi:slave_spi|bit_count[0]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.198      ;
+; 2.030 ; state_controller:inst2|ram_wr_addr[0]                  ; sdram_controller:inst|haddr_r[0]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.251      ;
+; 2.052 ; state_controller:inst2|ram_rd_addr[19]                 ; sdram_controller:inst|haddr_r[19]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.273      ;
+; 2.058 ; state_controller:inst2|ram_rd_addr[10]                 ; sdram_controller:inst|haddr_r[10]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.279      ;
+; 2.096 ; state_controller:inst2|ram_rd_addr[12]                 ; sdram_controller:inst|haddr_r[12]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.317      ;
+; 2.109 ; state_controller:inst2|data_addr[10]                   ; state_controller:inst2|ram_rd_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.330      ;
+; 2.111 ; state_controller:inst2|data_addr[1]                    ; state_controller:inst2|ram_wr_addr[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.332      ;
+; 2.112 ; state_controller:inst2|data_addr[22]                   ; state_controller:inst2|ram_rd_addr[22]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.333      ;
 ; 2.116 ; sdram_controller:inst|refresh_cnt[0]                   ; sdram_controller:inst|refresh_cnt[0]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; state_controller:inst2|spi:slave_spi|bit_count[2]      ; state_controller:inst2|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.337      ;
 ; 2.117 ; sdram_controller:inst|refresh_cnt[7]                   ; sdram_controller:inst|refresh_cnt[7]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.338      ;
-; 2.118 ; sdram_controller:inst|command[4]                       ; sdram_controller:inst|command[4]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.339      ;
-; 2.118 ; state_controller:inst1|ram_rd_addr[9]                  ; sdram_controller:inst|haddr_r[9]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.339      ;
-; 2.119 ; state_controller:inst1|ram_rd_addr[22]                 ; sdram_controller:inst|haddr_r[22]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.340      ;
-; 2.119 ; state_controller:inst1|spi:slave_spi|byte_data_sent[5] ; state_controller:inst1|spi:slave_spi|byte_data_sent[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.340      ;
-; 2.120 ; state_controller:inst1|ram_rd_addr[5]                  ; sdram_controller:inst|haddr_r[5]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.341      ;
+; 2.119 ; state_controller:inst2|ram_wr_addr[10]                 ; sdram_controller:inst|haddr_r[10]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.340      ;
+; 2.121 ; state_controller:inst2|ram_wr_addr[12]                 ; sdram_controller:inst|haddr_r[12]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.342      ;
+; 2.123 ; state_controller:inst2|ram_wr_data[0]                  ; sdram_controller:inst|wr_data_r[0]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.344      ;
+; 2.125 ; state_controller:inst2|ram_rst                         ; state_controller:inst2|ram_rst                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126 ; state_controller:inst2|ram_rd_enable                   ; state_controller:inst2|ram_rd_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.347      ;
 ; 2.126 ; sdram_controller:inst|refresh_cnt[1]                   ; sdram_controller:inst|refresh_cnt[1]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.347      ;
 ; 2.126 ; sdram_controller:inst|refresh_cnt[2]                   ; sdram_controller:inst|refresh_cnt[2]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.347      ;
-; 2.127 ; state_controller:inst1|spi:slave_spi|byte_data_sent[1] ; state_controller:inst1|spi:slave_spi|byte_data_sent[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.348      ;
-; 2.128 ; state_controller:inst1|spi:slave_spi|byte_data_sent[4] ; state_controller:inst1|spi:slave_spi|byte_data_sent[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.349      ;
-; 2.128 ; state_controller:inst1|spi:slave_spi|byte_data_sent[2] ; state_controller:inst1|spi:slave_spi|byte_data_sent[3] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.349      ;
-; 2.133 ; state_controller:inst1|state[3]                        ; state_controller:inst1|state[3]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.354      ;
-; 2.150 ; state_controller:inst1|spi:slave_spi|byte_data_recv[6] ; state_controller:inst1|data[14]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.371      ;
-; 2.152 ; state_controller:inst1|ram_wr_data[8]                  ; sdram_controller:inst|wr_data_r[8]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.373      ;
-; 2.153 ; state_controller:inst1|ram_wr_data[6]                  ; sdram_controller:inst|wr_data_r[6]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.374      ;
-; 2.164 ; state_controller:inst1|spi:slave_spi|SCKr[2]           ; state_controller:inst1|spi:slave_spi|byte_recv         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.385      ;
-; 2.171 ; state_controller:inst1|ram_rd_addr[14]                 ; sdram_controller:inst|haddr_r[14]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.392      ;
-; 2.204 ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.425      ;
-; 2.216 ; state_controller:inst1|ram_wr_addr[18]                 ; sdram_controller:inst|haddr_r[18]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.437      ;
-; 2.217 ; sdram_controller:inst|rd_data_r[1]                     ; state_controller:inst1|data[1]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.438      ;
-; 2.219 ; state_controller:inst1|ram_wr_data[14]                 ; sdram_controller:inst|wr_data_r[14]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.440      ;
+; 2.130 ; state_controller:inst2|spi:slave_spi|byte_data_sent[4] ; state_controller:inst2|spi:slave_spi|byte_data_sent[5] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.351      ;
+; 2.132 ; state_controller:inst2|spi:slave_spi|byte_data_sent[3] ; state_controller:inst2|spi:slave_spi|byte_data_sent[4] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.353      ;
+; 2.133 ; state_controller:inst2|spi:slave_spi|byte_data_sent[5] ; state_controller:inst2|spi:slave_spi|byte_data_sent[6] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.354      ;
+; 2.135 ; state_controller:inst2|spi:slave_spi|busy_out          ; state_controller:inst2|spi:slave_spi|busy_out          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.356      ;
+; 2.136 ; sdram_controller:inst|state[3]                         ; sdram_controller:inst|state[3]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136 ; state_controller:inst2|spi:slave_spi|bit_count[1]      ; state_controller:inst2|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.357      ;
+; 2.213 ; state_controller:inst2|ram_wr_enable                   ; state_controller:inst2|ram_wr_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.434      ;
+; 2.213 ; state_controller:inst2|data_addr[20]                   ; state_controller:inst2|ram_rd_addr[20]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.434      ;
+; 2.215 ; state_controller:inst2|data_addr[2]                    ; state_controller:inst2|ram_wr_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.436      ;
 ; 2.221 ; sdram_controller:inst|refresh_cnt[3]                   ; sdram_controller:inst|refresh_cnt[3]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.442      ;
 ; 2.221 ; sdram_controller:inst|refresh_cnt[8]                   ; sdram_controller:inst|refresh_cnt[8]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.442      ;
-; 2.222 ; state_controller:inst1|ram_rd_enable                   ; state_controller:inst1|ram_rd_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.443      ;
+; 2.222 ; state_controller:inst2|led_out                         ; state_controller:inst2|led_out                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.443      ;
+; 2.222 ; state_controller:inst2|data_addr[21]                   ; state_controller:inst2|ram_rd_addr[21]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.443      ;
+; 2.224 ; state_controller:inst2|data_addr[17]                   ; state_controller:inst2|ram_rd_addr[17]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.445      ;
+; 2.224 ; state_controller:inst2|spi:slave_spi|byte_data_sent[1] ; state_controller:inst2|spi:slave_spi|byte_data_sent[2] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.445      ;
+; 2.228 ; state_controller:inst2|spi:slave_spi|byte_data_sent[6] ; state_controller:inst2|spi:slave_spi|byte_data_sent[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.449      ;
 ; 2.230 ; sdram_controller:inst|refresh_cnt[5]                   ; sdram_controller:inst|refresh_cnt[5]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.451      ;
 ; 2.231 ; sdram_controller:inst|refresh_cnt[4]                   ; sdram_controller:inst|refresh_cnt[4]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.452      ;
 ; 2.231 ; sdram_controller:inst|refresh_cnt[6]                   ; sdram_controller:inst|refresh_cnt[6]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.452      ;
-; 2.234 ; state_controller:inst1|spi:slave_spi|SSELr[1]          ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.455      ;
-; 2.272 ; state_controller:inst1|ram_rst                         ; state_controller:inst1|ram_rst                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.493      ;
-; 2.273 ; state_controller:inst1|ram_wr_enable                   ; state_controller:inst1|ram_wr_enable                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.494      ;
-; 2.276 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.497      ;
-; 2.277 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[2]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.498      ;
-; 2.283 ; state_controller:inst1|spi:slave_spi|bit_count[0]      ; state_controller:inst1|spi:slave_spi|bit_count[1]      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.504      ;
-; 2.306 ; state_controller:inst1|ram_rd_addr[21]                 ; sdram_controller:inst|haddr_r[21]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.527      ;
-; 2.308 ; state_controller:inst1|ram_wr_addr[20]                 ; sdram_controller:inst|haddr_r[20]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.529      ;
-; 2.312 ; state_controller:inst1|ram_wr_addr[9]                  ; sdram_controller:inst|haddr_r[9]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.533      ;
-; 2.348 ; state_controller:inst1|spi:slave_spi|byte_data_recv[2] ; state_controller:inst1|data[10]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.569      ;
-; 2.352 ; state_controller:inst1|data_addr[13]                   ; state_controller:inst1|ram_wr_addr[13]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.573      ;
-; 2.363 ; state_controller:inst1|data_addr[1]                    ; state_controller:inst1|ram_wr_addr[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.584      ;
-; 2.371 ; state_controller:inst1|data_addr[12]                   ; state_controller:inst1|ram_rd_addr[12]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.592      ;
-; 2.375 ; state_controller:inst1|data_addr[12]                   ; state_controller:inst1|ram_wr_addr[12]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.596      ;
-; 2.377 ; sdram_controller:inst|state_cnt[0]                     ; sdram_controller:inst|state_cnt[0]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.598      ;
-; 2.388 ; state_controller:inst1|data_addr[10]                   ; state_controller:inst1|ram_wr_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.609      ;
-; 2.395 ; state_controller:inst1|data_addr[10]                   ; state_controller:inst1|ram_rd_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.616      ;
-; 2.426 ; state_controller:inst1|spi:slave_spi|byte_data_recv[5] ; state_controller:inst1|data_addr[5]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.647      ;
-; 2.432 ; state_controller:inst1|spi:slave_spi|byte_data_recv[0] ; state_controller:inst1|data_addr[0]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.653      ;
-; 2.458 ; state_controller:inst1|data_addr[15]                   ; state_controller:inst1|ram_rd_addr[15]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.679      ;
-; 2.465 ; state_controller:inst1|data_addr[15]                   ; state_controller:inst1|ram_wr_addr[15]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.686      ;
-; 2.482 ; state_controller:inst1|data_addr[11]                   ; state_controller:inst1|ram_wr_addr[11]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.703      ;
-; 2.515 ; state_controller:inst1|ram_rd_addr[20]                 ; sdram_controller:inst|haddr_r[20]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.736      ;
-; 2.521 ; state_controller:inst1|ram_wr_addr[11]                 ; sdram_controller:inst|haddr_r[11]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.742      ;
-; 2.524 ; state_controller:inst1|ram_wr_addr[13]                 ; sdram_controller:inst|haddr_r[13]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.745      ;
-; 2.530 ; state_controller:inst1|spi:slave_spi|byte_data_recv[3] ; state_controller:inst1|data_addr[11]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.751      ;
-; 2.531 ; state_controller:inst1|data[1]                         ; state_controller:inst1|ram_wr_data[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.752      ;
-; 2.571 ; state_controller:inst1|data_addr[2]                    ; state_controller:inst1|ram_rd_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.792      ;
-; 2.587 ; state_controller:inst1|ram_wr_data[13]                 ; sdram_controller:inst|wr_data_r[13]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.808      ;
-; 2.592 ; sdram_controller:inst|rd_data_r[3]                     ; state_controller:inst1|data[3]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.813      ;
-; 2.603 ; state_controller:inst1|ram_rd_addr[1]                  ; sdram_controller:inst|haddr_r[1]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.824      ;
-; 2.607 ; sdram_controller:inst|state_cnt[3]                     ; sdram_controller:inst|state_cnt[3]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.828      ;
-; 2.619 ; state_controller:inst1|ram_wr_addr[19]                 ; sdram_controller:inst|haddr_r[19]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.840      ;
-; 2.619 ; state_controller:inst1|data_addr[13]                   ; state_controller:inst1|ram_rd_addr[13]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.840      ;
-; 2.623 ; state_controller:inst1|data[14]                        ; state_controller:inst1|spi_data_send[6]                ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.844      ;
-; 2.624 ; state_controller:inst1|spi:slave_spi|byte_data_recv[1] ; state_controller:inst1|data_addr[1]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.845      ;
+; 2.232 ; state_controller:inst2|ram_wr_addr[3]                  ; sdram_controller:inst|haddr_r[3]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.453      ;
+; 2.236 ; sdram_controller:inst|state_cnt[1]                     ; sdram_controller:inst|state_cnt[3]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.457      ;
+; 2.236 ; state_controller:inst2|spi:slave_spi|byte_data_sent[2] ; state_controller:inst2|spi:slave_spi|byte_data_sent[3] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.457      ;
+; 2.239 ; sdram_controller:inst|rd_data_r[7]                     ; state_controller:inst2|data[7]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.460      ;
+; 2.241 ; state_controller:inst2|spi:slave_spi|byte_data_sent[0] ; state_controller:inst2|spi:slave_spi|byte_data_sent[0] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.462      ;
+; 2.258 ; state_controller:inst2|read_good                       ; state_controller:inst2|read_good                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.479      ;
+; 2.308 ; state_controller:inst2|data_addr[1]                    ; state_controller:inst2|ram_rd_addr[1]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.529      ;
+; 2.310 ; sdram_controller:inst|state_cnt[0]                     ; sdram_controller:inst|state_cnt[0]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.531      ;
+; 2.321 ; state_controller:inst2|spi:slave_spi|data_change       ; state_controller:inst2|spi:slave_spi|busy_out          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.542      ;
+; 2.322 ; state_controller:inst2|ram_wr_addr[5]                  ; sdram_controller:inst|haddr_r[5]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.543      ;
+; 2.324 ; state_controller:inst2|ram_wr_addr[22]                 ; sdram_controller:inst|haddr_r[22]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.545      ;
+; 2.327 ; state_controller:inst2|data_addr[0]                    ; state_controller:inst2|ram_rd_addr[0]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.548      ;
+; 2.343 ; state_controller:inst2|data_addr[4]                    ; state_controller:inst2|ram_wr_addr[4]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.564      ;
+; 2.346 ; state_controller:inst2|data_addr[4]                    ; state_controller:inst2|ram_rd_addr[4]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.567      ;
+; 2.366 ; state_controller:inst2|state[10]                       ; state_controller:inst2|state[3]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.587      ;
+; 2.366 ; state_controller:inst2|state[10]                       ; state_controller:inst2|state[4]                        ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.587      ;
+; 2.407 ; state_controller:inst2|spi:slave_spi|SSELr[1]          ; state_controller:inst2|spi:slave_spi|SSELr[2]          ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.628      ;
+; 2.491 ; state_controller:inst2|ram_wr_addr[2]                  ; sdram_controller:inst|haddr_r[2]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.712      ;
+; 2.492 ; state_controller:inst2|data_addr[18]                   ; state_controller:inst2|ram_rd_addr[18]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.713      ;
+; 2.493 ; state_controller:inst2|spi:slave_spi|byte_data_recv[3] ; state_controller:inst2|data_addr[3]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.714      ;
+; 2.501 ; state_controller:inst2|spi:slave_spi|byte_data_recv[3] ; state_controller:inst2|data_addr[11]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.722      ;
+; 2.510 ; state_controller:inst2|spi:slave_spi|byte_data_recv[5] ; state_controller:inst2|data_addr[13]                   ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.731      ;
+; 2.513 ; state_controller:inst2|ram_rd_addr[5]                  ; sdram_controller:inst|haddr_r[5]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.734      ;
+; 2.528 ; state_controller:inst2|ram_wr_addr[19]                 ; sdram_controller:inst|haddr_r[19]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.749      ;
+; 2.535 ; state_controller:inst2|data_addr[2]                    ; state_controller:inst2|ram_rd_addr[2]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.756      ;
+; 2.553 ; state_controller:inst2|data_addr[9]                    ; state_controller:inst2|ram_rd_addr[9]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.774      ;
+; 2.555 ; state_controller:inst2|data_addr[7]                    ; state_controller:inst2|ram_rd_addr[7]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.776      ;
+; 2.557 ; state_controller:inst2|ram_rd_addr[3]                  ; sdram_controller:inst|haddr_r[3]                       ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.778      ;
+; 2.563 ; state_controller:inst2|data_addr[10]                   ; state_controller:inst2|ram_wr_addr[10]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.784      ;
+; 2.565 ; state_controller:inst2|data_addr[7]                    ; state_controller:inst2|ram_wr_addr[7]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.786      ;
+; 2.578 ; state_controller:inst2|spi:slave_spi|byte_data_recv[6] ; state_controller:inst2|spi:slave_spi|byte_data_recv[7] ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.799      ;
+; 2.597 ; sdram_controller:inst|state[2]                         ; sdram_controller:inst|state[2]                         ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.818      ;
+; 2.604 ; state_controller:inst2|ram_wr_addr[14]                 ; sdram_controller:inst|haddr_r[14]                      ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.825      ;
+; 2.605 ; sdram_controller:inst|state_cnt[2]                     ; sdram_controller:inst|state_cnt[3]                     ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.826      ;
+; 2.608 ; state_controller:inst2|data_addr[22]                   ; state_controller:inst2|ram_wr_addr[22]                 ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.829      ;
+; 2.613 ; state_controller:inst2|spi:slave_spi|byte_data_recv[0] ; state_controller:inst2|data_addr[8]                    ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.834      ;
+; 2.615 ; state_controller:inst2|data[7]                         ; state_controller:inst2|ram_wr_data[7]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.836      ;
+; 2.615 ; state_controller:inst2|data[6]                         ; state_controller:inst2|ram_wr_data[6]                  ; MCO_clk      ; MCO_clk     ; 0.000        ; 0.000      ; 2.836      ;
 +-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -361,7 +361,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; MCO_clk    ; MCO_clk  ; 2329     ; 0        ; 0        ; 0        ;
+; MCO_clk    ; MCO_clk  ; 3456     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -371,7 +371,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; MCO_clk    ; MCO_clk  ; 2329     ; 0        ; 0        ; 0        ;
+; MCO_clk    ; MCO_clk  ; 3456     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -397,8 +397,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 20    ; 20   ;
 ; Unconstrained Input Port Paths  ; 20    ; 20   ;
-; Unconstrained Output Ports      ; 38    ; 38   ;
-; Unconstrained Output Port Paths ; 197   ; 197  ;
+; Unconstrained Output Ports      ; 39    ; 39   ;
+; Unconstrained Output Port Paths ; 198   ; 198  ;
 +---------------------------------+-------+------+
 
 
@@ -482,6 +482,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; RAM_mask_low  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; RAM_ras       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; RAM_we        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+---------------------------------------------------------------------------------------+
 
 
@@ -556,6 +557,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; RAM_mask_low  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; RAM_ras       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; RAM_we        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+---------------------------------------------------------------------------------------+
 
 
@@ -565,7 +567,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Jul 23 20:05:05 2020
+    Info: Processing started: Sun Aug  2 14:06:54 2020
 Info: Command: quartus_sta elbarato64 -c elbarato64
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -581,10 +583,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -7.836
+Info (332146): Worst-case setup slack is -8.602
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.836           -1423.603 MCO_clk 
+    Info (332119):    -8.602           -1582.800 MCO_clk 
 Info (332146): Worst-case hold slack is 1.376
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -599,8 +601,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 566 megabytes
-    Info: Processing ended: Thu Jul 23 20:05:06 2020
+    Info: Peak virtual memory: 568 megabytes
+    Info: Processing ended: Sun Aug  2 14:06:55 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

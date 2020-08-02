@@ -7,7 +7,9 @@ module spi(
     output data_ready,
 	output [7:0] data_recv,
 	input [7:0] data_send,
-    output [2:0] bit_count_out
+    output [2:0] bit_count_out,
+    input do_send,
+    output busy
 );
 
 logic [2:0] SCKr; always @(posedge clk) SCKr <= {SCKr[1:0], SCK};
@@ -36,8 +38,11 @@ assign data_recv = byte_data_recv;
 logic [7:0] byte_data_sent;
 assign MISO = byte_data_sent[7];
 
-logic data_ready_out;
-assign data_ready = data_ready_out;
+assign data_ready = byte_recv;
+
+logic data_change;
+logic busy_out;
+assign busy = busy_out;
 
 /* Control receiving data */
 always @(posedge clk) begin
@@ -51,22 +56,26 @@ end
 
 always @(posedge clk) byte_recv <= SSEL_active && SCK_risingedge && (bit_count == 3'b111);
 
-/* Latch byte we just read here */
-always @(posedge clk) begin
-    if(byte_recv) data_ready_out <= 1;
-    else data_ready_out <= 0;
-end
-
-/* Control sending data */
 always @(posedge clk) begin
     if(SSEL_active) begin
-        if(SCK_fallingedge) begin
-            if(bit_count == 3'b000) begin
-                byte_data_sent <= data_send;
-            end else begin
-                byte_data_sent <= {byte_data_sent[6:0], 1'b0}; 
-            end
+        if(SSEL_startmessage && data_change) begin
+            data_change <= 0;
+            byte_data_sent <= data_send;
         end
+        if(SCK_fallingedge) begin
+            if(data_change == 0) begin
+                busy_out <= 0;
+            end
+            byte_data_sent <= {byte_data_sent[6:0], 1'b0}; 
+        end else begin
+            if(do_send && busy_out == 0) begin
+                data_change <= 1;
+                busy_out <= 1;
+            end 
+        end
+    end else if(do_send && busy_out == 0) begin
+        data_change <= 1;
+        busy_out <= 1;     
     end
 end
 

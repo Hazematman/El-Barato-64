@@ -112,3 +112,4 @@ set_location_assignment PIN_139 -to RAM_data[2]
 set_location_assignment PIN_140 -to RAM_data[1]
 set_location_assignment PIN_141 -to RAM_data[0]
 set_location_assignment PIN_89 -to MCO_clk
+set_location_assignment PIN_1 -to led
