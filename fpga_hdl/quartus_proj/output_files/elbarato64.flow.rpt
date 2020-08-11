@@ -1,5 +1,5 @@
 Flow report for elbarato64
-Sun Aug  2 14:07:07 2020
+Mon Aug 10 21:53:39 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Sun Aug  2 14:07:07 2020       ;
+; Flow Status           ; Successful - Mon Aug 10 21:53:39 2020       ;
 ; Quartus Prime Version ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name         ; elbarato64                                  ;
 ; Top-level Entity Name ; elbarato64                                  ;
 ; Family                ; MAX II                                      ;
 ; Device                ; EPM570T144C5                                ;
 ; Timing Models         ; Final                                       ;
-; Total logic elements  ; 433                                         ;
-; Total pins            ; 45                                          ;
+; Total logic elements  ; 540                                         ;
+; Total pins            ; 65                                          ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
 +-----------------------+---------------------------------------------+
@@ -60,31 +60,31 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/02/2020 14:07:00 ;
+; Start date & time ; 08/10/2020 21:53:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; elbarato64          ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                          ;
-+---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                       ; Value                           ; Default Value ; Entity Name ; Section Id                        ;
-+---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                 ; 154791889325443.159639162006653 ; --            ; --          ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                     ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                        ; 1 ps                            ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP                ; 85                              ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP                ; 0                               ; --            ; --          ; --                                ;
-; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                            ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air     ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY              ; output_files                    ; --            ; --          ; --                                ;
-+---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                       ;
++---------------------------------------+------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                       ; Value                        ; Default Value ; Entity Name ; Section Id                        ;
++---------------------------------------+------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                 ; 963348530564.159711081107825 ; --            ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                          ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                          ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                          ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                          ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                  ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)    ; <None>        ; --          ; --                                ;
+; EDA_TIME_SCALE                        ; 1 ps                         ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                           ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                            ; --            ; --          ; --                                ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                         ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air  ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY              ; output_files                 ; --            ; --          ; --                                ;
++---------------------------------------+------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -92,8 +92,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 552 MB              ; 00:00:16                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 556 MB              ; 00:00:17                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

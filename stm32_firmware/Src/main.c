@@ -58,6 +58,9 @@ static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
+
+extern int cic_main(void);
+
 static void SPI_Transmit(UART_HandleTypeDef *handle, uint8_t *data_out, size_t size, size_t delay)
 {
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
@@ -82,7 +85,7 @@ static uint8_t *SPI_Receive(UART_HandleTypeDef *handle, uint8_t * data_in, size_
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }
 
-void process_input(void)
+void process_input(uint8_t do_print)
 {
   uint8_t *data_ptr = &char_buf[0];
   while(true) 
@@ -93,16 +96,19 @@ void process_input(void)
       if(*data_ptr == 0xc)
       {
         c = '\b';
-        HAL_UART_Transmit(&huart1, &c, sizeof(char), HAL_MAX_DELAY);
+        if(do_print)
+          HAL_UART_Transmit(&huart1, &c, sizeof(char), HAL_MAX_DELAY);
         continue;  
       }
       else if(*data_ptr == '\n' || *data_ptr == '\r')
       {
         c = '\n';
-        HAL_UART_Transmit(&huart1, "\r\n", sizeof(char)*2, HAL_MAX_DELAY);
+        if(do_print)
+          HAL_UART_Transmit(&huart1, "\r\n", sizeof(char)*2, HAL_MAX_DELAY);
         return;
       }
-      HAL_UART_Transmit(&huart1, &c, sizeof(char), HAL_MAX_DELAY);
+      if(do_print)
+        HAL_UART_Transmit(&huart1, &c, sizeof(char), HAL_MAX_DELAY);
       data_ptr += 1;
     }
   }
@@ -114,6 +120,56 @@ void process_input(void)
 /* USER CODE BEGIN 0 */
 
 #define STR_BUFFER "Failed to sprintf\r\n"
+
+char ReadBit(void)
+{
+  unsigned char res;
+
+  // wait for DCLK to go low
+  while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET)
+  { }
+
+  // Read the data bit
+  res = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+
+  // wait for DCLK to go high
+  while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_RESET)
+  { }
+
+  return res;
+}
+
+void WriteBit(unsigned char b)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  // wait for DCLK to go low
+  while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET)
+  { }
+
+  if (b == 0)
+  {
+    // drive the output low
+    GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+  }
+
+  // wait for DCLK to go high
+  while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_RESET)
+  { }
+
+  // tristate the output
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
 
 /* USER CODE END 0 */
 
@@ -152,9 +208,12 @@ int main(void)
   uint8_t data_out = 0;
   uint8_t data_in = 0;
   uint32_t data_size = 0;
+  uint8_t do_print = 1;
 
   // Turn on the LED
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+
+  HAL_Delay(1000);
 
 
 #if 1
@@ -184,8 +243,11 @@ int main(void)
     uint8_t status = 0xFF;
     data_in = 0;
 
-    HAL_UART_Transmit(&huart1, "Enter command: ", sizeof("Enter command: "), HAL_MAX_DELAY);
-    process_input();
+    if(do_print)
+      HAL_UART_Transmit(&huart1, "Enter command: ", sizeof("Enter command: "), HAL_MAX_DELAY);
+    else
+      HAL_UART_Transmit(&huart1, "D", 1, HAL_MAX_DELAY);
+    process_input(do_print);
     int cmd = 0;
     int addr = 0;
     int data = 0;
@@ -251,7 +313,15 @@ int main(void)
         else
           HAL_UART_Transmit(&huart1, STR_BUFFER, sizeof(STR_BUFFER), HAL_MAX_DELAY);
     }
-  }
+    else if(cmd == 3)
+    {
+      cic_main();
+    }
+    else if(cmd == 4)
+    {
+      do_print = !do_print;
+    }
+  } 
   /* USER CODE END 3 */
 }
 
@@ -378,9 +448,25 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;

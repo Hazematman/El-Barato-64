@@ -99,37 +99,37 @@ TMS                          : 33        : input  :                   :         
 TDI                          : 34        : input  :                   :         : 1         :                
 TCK                          : 35        : input  :                   :         : 1         :                
 TDO                          : 36        : output :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 37        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 38        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 39        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 40        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 41        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 42        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 43        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 44        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 45        :        :                   :         : 1         :                
+N64_AD[15]                   : 37        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[0]                    : 38        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[14]                   : 39        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[1]                    : 40        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[13]                   : 41        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[2]                    : 42        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[12]                   : 43        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[3]                    : 44        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_WRITE                    : 45        : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 46        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 47        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 49        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 51        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 1         :                
+N64_ALE_L                    : 48        : input  : 3.3-V LVTTL       :         : 1         : Y              
+N64_READ                     : 49        : input  : 3.3-V LVTTL       :         : 1         : Y              
+N64_ALE_H                    : 50        : input  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[11]                   : 51        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[4]                    : 52        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 53        :        :                   :         : 1         :                
 GNDINT                       : 54        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 55        :        :                   :         : 1         :                
 VCCINT                       : 56        : power  :                   : 2.5V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 57        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 58        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 59        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 60        :        :                   :         : 1         :                
+N64_AD[10]                   : 57        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[5]                    : 58        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[9]                    : 59        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[6]                    : 60        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 61        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 62        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 63        :        :                   :         : 1         :                
 VCCIO1                       : 64        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 65        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 66        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 67        :        :                   :         : 1         :                
+N64_AD[8]                    : 66        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+N64_AD[7]                    : 67        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 68        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 69        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 70        :        :                   :         : 1         :                

@@ -44,6 +44,13 @@ logic data_change;
 logic busy_out;
 assign busy = busy_out;
 
+initial begin
+    byte_recv <= 0;
+    bit_count <= 0;
+    busy_out <= 0;
+    data_change <= 0;
+end
+
 /* Control receiving data */
 always @(posedge clk) begin
     if(~SSEL_active) begin

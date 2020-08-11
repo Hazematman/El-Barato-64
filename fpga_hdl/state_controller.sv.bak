@@ -22,10 +22,10 @@ module state_controller(
 
     input busy,
     output rst_n,
-    output led,
+    output led
 
     /* N64 PINS */
-    inout [15:0] N64_AD,
+    inout N64_AD,
     input N64_READ,
     input N64_WRITE,
     input N64_ALE_L,
@@ -127,12 +127,6 @@ n64_bus nbus(
 
 initial begin
     state = state_begin_1;
-    spi_do_send = 0;
-    led_out = 0;
-    ram_rst = 0;
-    ram_wr_enable = 0;
-    ram_rd_enable = 0;
-    read_good = 0;
 end
 
 
@@ -181,7 +175,7 @@ always @(posedge clk) begin
     state_begin_7: begin
         if(rd_ready) begin
             if(rd_data == 16'hDEAD) begin 
-				led_out <= 1;
+					led_out <= 1;
             end else begin
                 led_out <= 0;
             end

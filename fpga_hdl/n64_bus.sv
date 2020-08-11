@@ -6,6 +6,7 @@ module n64_bus(
     input ALE_L,
     input ALE_H,
     input [15:0] data,
+    output [31:0] addr,
     output addr_ready
 );
 
@@ -31,7 +32,8 @@ assign ALE_H_fallingedge = (ALE_Hr[2:1] == 2'b10);
 logic addr_ready_out;
 assign addr_ready = addr_ready_out;
 
-logic [31:0] addr;
+logic [31:0] addr_out;
+assign addr = addr_out;
 
 assign AD = (READ == 0) ? data : 16'bZ;
 
@@ -40,6 +42,12 @@ enum {
     state_read_high,
     state_read_low
 } state;
+
+initial begin
+    state = state_wait;
+    addr_ready_out = 0;
+end
+
 
 always @(posedge clk) begin
     case(state)
@@ -50,21 +58,21 @@ always @(posedge clk) begin
         end
         if(READ_risingedge) begin
             addr_ready_out <= 1;
-            addr <= addr + 2;
+            addr_out <= addr + 2;
         end else if(READ_fallingedge) begin
             addr_ready_out <= 0;
         end
     end
     state_read_high: begin
         if(ALE_H_fallingedge) begin
-            addr[31:16] <= AD;
+            addr_out[31:16] <= AD;
             state <= state_read_low;
         end
     end
     state_read_low: begin
         if(ALE_L_fallingedge) begin
             addr_ready_out <= 1;
-            addr[15:0] <= AD;
+            addr_out[15:0] <= AD;
             state <= state_wait;
         end
     end

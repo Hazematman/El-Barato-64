@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elbarato64
-Sun Aug  2 14:07:07 2020
+Mon Aug 10 21:53:39 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,11 +14,13 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: sdram_controller:inst
- 12. Port Connectivity Checks: "state_controller:inst2|spi:slave_spi"
- 13. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: sdram_controller:inst
+ 13. Port Connectivity Checks: "state_controller:inst1|n64_bus:nbus"
+ 14. Port Connectivity Checks: "state_controller:inst1|spi:slave_spi"
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +47,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Aug  2 14:07:07 2020       ;
+; Analysis & Synthesis Status ; Successful - Mon Aug 10 21:53:39 2020       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; elbarato64                                  ;
 ; Top-level Entity Name       ; elbarato64                                  ;
 ; Family                      ; MAX II                                      ;
-; Total logic elements        ; 433                                         ;
-; Total pins                  ; 45                                          ;
+; Total logic elements        ; 540                                         ;
+; Total pins                  ; 65                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -149,6 +151,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; ../n64_bus.sv                    ; yes             ; User SystemVerilog HDL File        ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/n64_bus.sv                  ;         ;
 ; ../state_controller.sv           ; yes             ; User SystemVerilog HDL File        ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv         ;         ;
 ; ../spi.sv                        ; yes             ; User SystemVerilog HDL File        ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv                      ;         ;
 ; ../sdram_controller.v            ; yes             ; User Verilog HDL File              ; /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/sdram_controller.v          ;         ;
@@ -161,33 +164,33 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Total logic elements                        ; 433     ;
-;     -- Combinational with no register       ; 198     ;
-;     -- Register only                        ; 41      ;
-;     -- Combinational with a register        ; 194     ;
+; Total logic elements                        ; 540     ;
+;     -- Combinational with no register       ; 252     ;
+;     -- Register only                        ; 66      ;
+;     -- Combinational with a register        ; 222     ;
 ;                                             ;         ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 164     ;
-;     -- 3 input functions                    ; 81      ;
-;     -- 2 input functions                    ; 144     ;
-;     -- 1 input functions                    ; 3       ;
+;     -- 4 input functions                    ; 290     ;
+;     -- 3 input functions                    ; 69      ;
+;     -- 2 input functions                    ; 111     ;
+;     -- 1 input functions                    ; 4       ;
 ;     -- 0 input functions                    ; 0       ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 424     ;
-;     -- arithmetic mode                      ; 9       ;
+;     -- normal mode                          ; 509     ;
+;     -- arithmetic mode                      ; 31      ;
 ;     -- qfbk mode                            ; 0       ;
 ;     -- register cascade mode                ; 0       ;
 ;     -- synchronous clear/load mode          ; 51      ;
 ;     -- asynchronous clear/load mode         ; 0       ;
 ;                                             ;         ;
-; Total registers                             ; 235     ;
-; Total logic cells in carry chains           ; 10      ;
-; I/O pins                                    ; 45      ;
+; Total registers                             ; 288     ;
+; Total logic cells in carry chains           ; 33      ;
+; I/O pins                                    ; 65      ;
 ; Maximum fan-out node                        ; MCO_clk ;
-; Maximum fan-out                             ; 236     ;
-; Total fan-out                               ; 1772    ;
-; Average fan-out                             ; 3.71    ;
+; Maximum fan-out                             ; 289     ;
+; Total fan-out                               ; 2325    ;
+; Average fan-out                             ; 3.84    ;
 +---------------------------------------------+---------+
 
 
@@ -196,25 +199,44 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                              ; Entity Name      ; Library Name ;
 +-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
-; |elbarato64                 ; 433 (0)     ; 235          ; 0          ; 45   ; 0            ; 198 (0)      ; 41 (0)            ; 194 (0)          ; 10 (0)          ; 0 (0)      ; |elbarato64                                      ; elbarato64       ; work         ;
+; |elbarato64                 ; 540 (0)     ; 288          ; 0          ; 65   ; 0            ; 252 (0)      ; 66 (0)            ; 222 (0)          ; 33 (0)          ; 0 (0)      ; |elbarato64                                      ; elbarato64       ; work         ;
 ;    |sdram_controller:inst|  ; 162 (162)   ; 81           ; 0          ; 0    ; 0            ; 81 (81)      ; 0 (0)             ; 81 (81)          ; 10 (10)         ; 0 (0)      ; |elbarato64|sdram_controller:inst                ; sdram_controller ; work         ;
-;    |state_controller:inst2| ; 271 (233)   ; 154          ; 0          ; 0    ; 0            ; 117 (109)    ; 41 (25)           ; 113 (99)         ; 0 (0)           ; 0 (0)      ; |elbarato64|state_controller:inst2               ; state_controller ; work         ;
-;       |spi:slave_spi|       ; 38 (38)     ; 30           ; 0          ; 0    ; 0            ; 8 (8)        ; 16 (16)           ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |elbarato64|state_controller:inst2|spi:slave_spi ; spi              ; work         ;
+;    |state_controller:inst1| ; 378 (271)   ; 207          ; 0          ; 0    ; 0            ; 171 (130)    ; 66 (41)           ; 141 (100)        ; 23 (0)          ; 0 (0)      ; |elbarato64|state_controller:inst1               ; state_controller ; work         ;
+;       |n64_bus:nbus|        ; 69 (69)     ; 36           ; 0          ; 0    ; 0            ; 33 (33)      ; 9 (9)             ; 27 (27)          ; 23 (23)         ; 0 (0)      ; |elbarato64|state_controller:inst1|n64_bus:nbus  ; n64_bus          ; work         ;
+;       |spi:slave_spi|       ; 38 (38)     ; 30           ; 0          ; 0    ; 0            ; 8 (8)        ; 16 (16)           ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |elbarato64|state_controller:inst1|spi:slave_spi ; spi              ; work         ;
 +-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                       ;
-+-------------------------------------------+----------------------------------------------+
-; Register name                             ; Reason for Removal                           ;
-+-------------------------------------------+----------------------------------------------+
-; sdram_controller:inst|command[2,6]        ; Merged with sdram_controller:inst|command[1] ;
-; state_controller:inst2|state[5..9,11..31] ; Merged with state_controller:inst2|state[10] ;
-; sdram_controller:inst|command[1]          ; Stuck at GND due to stuck port data_in       ;
-; sdram_controller:inst|command[7]          ; Stuck at VCC due to stuck port data_in       ;
-; Total Number of Removed Registers = 30    ;                                              ;
-+-------------------------------------------+----------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++--------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                          ; Reason for Removal                                        ;
++--------------------------------------------------------+-----------------------------------------------------------+
+; sdram_controller:inst|command[2,6]                     ; Merged with sdram_controller:inst|command[1]              ;
+; state_controller:inst1|state[6..9,11..31]              ; Merged with state_controller:inst1|state[10]              ;
+; state_controller:inst1|n64_bus:nbus|state[2..9,11..31] ; Merged with state_controller:inst1|n64_bus:nbus|state[10] ;
+; sdram_controller:inst|command[1]                       ; Stuck at GND due to stuck port data_in                    ;
+; state_controller:inst1|n64_bus:nbus|state[10]          ; Stuck at GND due to stuck port data_in                    ;
+; sdram_controller:inst|command[7]                       ; Stuck at VCC due to stuck port data_in                    ;
+; state_controller:inst1|n64_bus:nbus|addr_out[24..31]   ; Lost fanout                                               ;
+; Total Number of Removed Registers = 67                 ;                                                           ;
++--------------------------------------------------------+-----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
+; Register name                                    ; Reason for Removal ; Registers Removed due to This Register            ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
+; state_controller:inst1|n64_bus:nbus|addr_out[31] ; Lost Fanouts       ; state_controller:inst1|n64_bus:nbus|addr_out[30], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[29], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[28], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[27], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[26], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[25], ;
+;                                                  ;                    ; state_controller:inst1|n64_bus:nbus|addr_out[24]  ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -222,12 +244,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 235   ;
+; Total registers                              ; 288   ;
 ; Number of registers using Synchronous Clear  ; 37    ;
 ; Number of registers using Synchronous Load   ; 14    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 193   ;
+; Number of registers using Clock Enable       ; 233   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -237,23 +259,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |elbarato64|state_controller:inst2|spi:slave_spi|byte_data_sent[6] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|spi:slave_spi|byte_data_sent[3] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state_cnt[2]                     ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|refresh_cnt[0]                   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|rd_data_r[9]                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst2|data_addr[18]                   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst2|data_addr[8]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst2|data_addr[2]                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|state_controller:inst2|spi:slave_spi|bit_count[0]      ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|haddr_r[1]                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[23]                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[9]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|data_addr[4]                    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|refresh_cnt[9]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |elbarato64|sdram_controller:inst|rd_data_r[1]                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|spi:slave_spi|bit_count[2]      ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|haddr_r[9]                       ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|command[4]                       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|command[0]                       ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state[3]                         ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |elbarato64|state_controller:inst2|spi_data_send[5]                ;
-; 5:1                ; 40 bits   ; 120 LEs       ; 40 LEs               ; 80 LEs                 ; Yes        ; |elbarato64|state_controller:inst2|ram_wr_addr[18]                 ;
-; 5:1                ; 24 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |elbarato64|state_controller:inst2|ram_rd_addr[6]                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|state_controller:inst2|data[14]                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|state_controller:inst2|data[7]                         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state[0]                         ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|n64_bus:nbus|addr_out[11]       ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|n64_bus:nbus|addr_out[29]       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|state[4]                         ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|spi_data_send[2]                ;
+; 5:1                ; 40 bits   ; 120 LEs       ; 40 LEs               ; 80 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|ram_wr_data[1]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|data[9]                         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|data[6]                         ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |elbarato64|state_controller:inst1|n64_bus:nbus|state[10]          ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |elbarato64|state_controller:inst1|ram_rd_addr[11]                 ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |elbarato64|sdram_controller:inst|wr_data_r[8]                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |elbarato64|sdram_controller:inst|addr[11]                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |elbarato64|sdram_controller:inst|bank_addr[0]                     ;
@@ -279,8 +304,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_controller:inst1|n64_bus:nbus"                                                        ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; addr[31..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "state_controller:inst2|spi:slave_spi"                                                        ;
+; Port Connectivity Checks: "state_controller:inst1|spi:slave_spi"                                                        ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port          ; Type   ; Severity ; Details                                                                             ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -294,10 +328,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Aug  2 14:07:00 2020
+    Info: Processing started: Mon Aug 10 21:53:31 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elbarato64 -c elbarato64
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/n64_bus.sv
+    Info (12023): Found entity 1: n64_bus File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/n64_bus.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv
     Info (12023): Found entity 1: state_controller File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/spi.sv
@@ -307,21 +343,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/l
 Info (12021): Found 1 design units, including 1 entities, in source file elbarato64.bdf
     Info (12023): Found entity 1: elbarato64
 Info (12127): Elaborating entity "elbarato64" for the top level hierarchy
-Info (12128): Elaborating entity "state_controller" for hierarchy "state_controller:inst2"
-Info (12128): Elaborating entity "spi" for hierarchy "state_controller:inst2|spi:slave_spi" File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 103
+Info (12128): Elaborating entity "state_controller" for hierarchy "state_controller:inst1"
+Info (12128): Elaborating entity "spi" for hierarchy "state_controller:inst1|spi:slave_spi" File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 115
+Info (12128): Elaborating entity "n64_bus" for hierarchy "state_controller:inst1|n64_bus:nbus" File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/state_controller.sv Line: 126
+Warning (10036): Verilog HDL or VHDL warning at n64_bus.sv(20): object "ALE_L_risingedge" assigned a value but never read File: /home/lucas.fryzek/dev/hardware/elbarato64/fpga_hdl/n64_bus.sv Line: 20
 Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:inst"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "RAM_clk_enable" is stuck at VCC
     Warning (13410): Pin "RAM_cs" is stuck at GND
-Info (21057): Implemented 478 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "N64_WRITE"
+Info (21057): Implemented 605 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 25 output pins
-    Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 433 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 552 megabytes
-    Info: Processing ended: Sun Aug  2 14:07:07 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info (21060): Implemented 32 bidirectional pins
+    Info (21061): Implemented 540 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 556 megabytes
+    Info: Processing ended: Mon Aug 10 21:53:39 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 
